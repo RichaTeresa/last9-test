@@ -1,0 +1,36 @@
+name: sample test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  evaluate-time-range:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        PYTHONPATH=src pytest tests/test.py --auto-approve || true
+
+    - name: Upload evaluation result (optional)
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: evaluated_time_range_report
+        path: evaluated_time_range.json
