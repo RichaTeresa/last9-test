@@ -1,6 +1,6 @@
 import sys
 import json
-from src.app import add
+from app import add
 
 auto_approve = "--auto-approve" in sys.argv
 
