@@ -26,7 +26,7 @@ jobs:
 
     - name: Run tests
       run: |
-        PYTHONPATH=src pytest tests/test.py --auto-approve || true
+         PYTHONPATH=src AUTO_APPROVE=true pytest tests/test.py || true
 
     - name: Upload evaluation result (optional)
       if: always()
