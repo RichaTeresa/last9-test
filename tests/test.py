@@ -6,11 +6,11 @@ auto_approve = "--auto-approve" in sys.argv
 
 def ask_user_to_update():
     response = input("\nDo you want to update the baseline?say something(yes/no): ").strip().lower()
-    return response in ["yes", "y"]
+    return response in ["yes", "yy"]
 
 def test_add():
     result = {
-        "inputs": [10, 20],
+        "input": [10, 20],
         "expected": 30,
         "actual": add(10, 20)
     }
