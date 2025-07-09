@@ -10,7 +10,7 @@ def ask_user_to_update():
 
 def test_add():
     result = {
-        "inputs": [10, 20],
+        "input": [10, 20],
         "expected": 30,
         "actual": add(10, 20)
     }
