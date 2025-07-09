@@ -5,7 +5,7 @@ from src.app import add
 auto_approve = "--auto-approve" in sys.argv
 
 def ask_user_to_update():
-    response = input("\nDo you want to update the baseline? (yes/no): ").strip().lower()
+    response = input("\nDo you want to update the baseline?say (yes/no): ").strip().lower()
     return response in ["yes", "y"]
 
 def test_add():
